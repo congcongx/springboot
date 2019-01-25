@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xie.mapper.UserMapper">
+
+    <select id="selUserById" parameterType="integer" resultType="com.xie.domain.User">
+        SELECT
+          user_id userId,
+          user_name userName,
+          gender,
+          birthday
+        FROM
+          t_user
+        WHERE
+          user_id = ${userId}
+    </select>
+</mapper>
