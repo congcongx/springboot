@@ -22,6 +22,7 @@ public class UserController {
         user.setUserName("张三");
         user.setGender("男");
         user.setBirthday(new Date());
+        System.out.println(user.toString());
         return userService.findUserById(userId);
     }
 }
