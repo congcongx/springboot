@@ -4,5 +4,7 @@ import com.xie.domain.User;
 
 public interface UserService {
 
-    User findUserById(Integer userId);
+    User findUserByUserName(String userName);
+
+    void addUser(User user);
 }

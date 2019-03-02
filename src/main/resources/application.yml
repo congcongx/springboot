@@ -6,6 +6,23 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 50
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: hikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-  config-location: classpath:mybatis/mybatis-config.xml
+#  config-location: classpath:mybatis/mybatis-config.xml
+  configuration:
+    map-underscore-to-camel-case: true
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
